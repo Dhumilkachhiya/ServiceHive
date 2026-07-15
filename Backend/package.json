@@ -8,10 +8,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "Service-Bee"
+    "url": "Service-Hive"
   },
   "license": "ISC",
-  "author": "Devam Tanna",
+  "author": "Dhrumil",
   "type": "module",
   "main": "index.js",
   "scripts": {
