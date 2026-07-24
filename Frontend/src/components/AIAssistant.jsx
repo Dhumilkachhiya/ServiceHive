@@ -18,12 +18,12 @@ const AIAssistant = () => {
         try {
             const res = await api.post(
                 "/api/ai/search",
-                { prompt }
+                { query: prompt }
             );
-            setResult(res.data.suggestion);
+            setResult(`I recommend looking in the "${res.data.category}" category!`);
         } catch (err) {
             console.error(err);
-            setResult("Our Hive wisdom is currently clouded. Please try again later.");
+            setResult(err.response?.data?.message || "Our Hive wisdom is currently clouded. Please try again later.");
         } finally {
             setLoading(false);
         }

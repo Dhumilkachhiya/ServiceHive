@@ -54,18 +54,15 @@ router.patch(
   "/companies/:id/verify",
   protectAdmin,
   async (req, res) => {
-    const company = await Company.findById(req.params.id);
-    if (!company) {
-      return res.status(404).json({ message: "Company not found" });
+    try {
+      const company = await Company.findByIdAndUpdate(req.params.id, { isVerified: true }, { new: true });
+      if (!company) {
+        return res.status(404).json({ message: "Company not found" });
+      }
+      res.json({ message: "Company verified successfully", companyId: company._id });
+    } catch (error) {
+      res.status(500).json({ message: "Internal server error during verification", error: error.message });
     }
-
-    company.isVerified = true;
-    await company.save();
-
-    res.json({
-      message: "Company verified successfully",
-      companyId: company._id,
-    });
   }
 );
 

@@ -28,7 +28,7 @@ export const sendEmail = async (to, subject, text, html) => {
 
     try {
         const info = await transporter.sendMail({
-            from: `"Service-Bee" <${process.env.EMAIL_USER}>`,
+            from: `"Service-Hive" <${process.env.EMAIL_USER}>`,
             to,
             subject,
             text,

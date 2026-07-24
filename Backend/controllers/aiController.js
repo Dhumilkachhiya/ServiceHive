@@ -40,6 +40,6 @@ export const aiSearchServices = async (req, res) => {
         });
     } catch (error) {
         console.error("AI SEARCH ERROR:", error);
-        return res.status(500).json({ message: "AI search failed" });
+        return res.status(500).json({ message: "AI search failed: " + error.message });
     }
 };
