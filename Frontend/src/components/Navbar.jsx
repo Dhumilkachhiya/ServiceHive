@@ -21,7 +21,7 @@ export default function Navbar({ onOpenPremium }) {
                             <BeeLogo className="w-6 h-6" />
                         </div>
                         <span className="text-xl font-display font-black tracking-tighter">
-                            <span className="text-petal-moss dark:text-white">Service</span> <span className="text-petal-rose">Bee</span>
+                            <span className="text-petal-moss dark:text-white">Service</span><span className="text-petal-rose">Hive</span>
                         </span>
                     </Link>
 

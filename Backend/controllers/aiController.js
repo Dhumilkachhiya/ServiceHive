@@ -13,7 +13,7 @@ export const aiSearchServices = async (req, res) => {
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         const prompt = `
-      You are an AI assistant for "Service-Bee", a service provider platform. 
+      You are an AI assistant for "ServiceHive", a service provider platform. 
       The user is searching for: "${query}".
       Based on this query, extract the most relevant service category.
       Common categories include: Plumbing, Electrical, Cleaning, Gardening, Pest Control, Carpentry, Painting, Appliance Repair, HVAC, Moving.

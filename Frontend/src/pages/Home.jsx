@@ -24,7 +24,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 bg-petal-rose/10 backdrop-blur-md px-4 py-2 rounded-full border border-petal-rose/20 mb-8"
           >
             <BeeLogo className="w-4 h-4" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-petal-rose">Premium Service Bee Experience</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-petal-rose">Premium ServiceHive Experience</span>
           </motion.div>
 
           <motion.h1
@@ -118,7 +118,7 @@ const Home = () => {
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-display font-black text-white mb-6 tracking-tight">Ready to Get Started?</h2>
             <p className="text-white/70 mb-12 max-w-xl mx-auto text-lg leading-relaxed font-medium">
-              Join thousands of happy souls who have improved their lives with Service Bee.
+              Join thousands of happy souls who have improved their lives with ServiceHive.
             </p>
             <Link to="/signup">
               <Button className="bg-petal-rose text-white hover:opacity-90 px-12 py-5 text-xl font-black rounded-[24px] flex items-center gap-3 mx-auto shadow-2xl shadow-petal-rose/30 border-none">

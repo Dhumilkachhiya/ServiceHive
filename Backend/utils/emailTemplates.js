@@ -5,7 +5,7 @@ export const getOtpTemplate = (otp, name = "there", type = "Login Verification")
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Service Bee - OTP Verification</title>
+        <title>ServiceHive - OTP Verification</title>
         <style>
             body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -87,7 +87,7 @@ export const getOtpTemplate = (otp, name = "there", type = "Login Verification")
     <body>
         <div class="container">
             <div class="header">
-                <div class="logo">🐝 Service Bee</div>
+                <div class="logo">🐝 ServiceHive</div>
             </div>
             <div class="content">
                 <div class="bee-icon">🍯</div>
@@ -101,7 +101,7 @@ export const getOtpTemplate = (otp, name = "there", type = "Login Verification")
                 <p class="warning">If you didn't request this code, you can safely ignore this email.</p>
             </div>
             <div class="footer">
-                &copy; 2026 Service Bee. All rights reserved.<br>
+                &copy; 2026 ServiceHive. All rights reserved.<br>
                 Empowering the hive, one service at a time.
             </div>
         </div>
@@ -126,7 +126,7 @@ export const getWelcomeTemplate = (name, type = "User") => {
     <body>
         <div class="card">
             <h1>Welcome to the Hive, ${name}!</h1>
-            <p>We're thrilled to have you as a ${type} in the Service Bee community.</p>
+            <p>We're thrilled to have you as a ${type} in the ServiceHive community.</p>
             <p>Start exploring services or manage your business with ease.</p>
             <br><br>
             <a href="https://service-bee-frontend.onrender.com" class="btn">Enter the Hive</a>

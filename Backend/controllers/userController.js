@@ -60,7 +60,7 @@ export const registerUser = async (req, res) => {
     // Send OTP via Email
     await sendEmail(
       user.email,
-      "Welcome to Service Bee - Verify Your Account",
+      "Welcome to ServiceHive - Verify Your Account",
       `Your verification OTP is: ${otp}.`,
       getOtpTemplate(otp, name, "Account Verification")
     );
@@ -110,7 +110,7 @@ export const loginUser = async (req, res) => {
     console.log(`[LOGIN] Sending OTP to ${user.email}...`);
     const result = await sendEmail(
       user.email,
-      "Login OTP - Service Bee",
+      "Login OTP - ServiceHive",
       `Your login OTP is: ${otp}.`,
       getOtpTemplate(otp, user.name, "Secure Login")
     );
@@ -207,7 +207,7 @@ export const resendOTP = async (req, res) => {
 
     await sendEmail(
       email,
-      "Login OTP - Service Bee",
+      "Login OTP - ServiceHive",
       `Your new OTP is: ${otp}`,
       getOtpTemplate(otp, user.name, "OTP Resend")
     );

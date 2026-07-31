@@ -111,7 +111,7 @@ export default function UserDashboard() {
         <div className="space-y-8">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-100 dark:border-petal-leaf/10 pb-6 gap-4">
                 <div>
-                    <h2 className="text-3xl font-display font-black text-petal-leaf dark:text-white tracking-tight">Service Bee Hive</h2>
+                    <h2 className="text-3xl font-display font-black text-petal-leaf dark:text-white tracking-tight">ServiceHive</h2>
                     <p className="text-gray-500 dark:text-gray-400 text-sm mt-1 font-medium">Manage your services and track your network</p>
                 </div>
                 <div className="flex bg-gray-100 dark:bg-petal-muted/30 p-1.5 rounded-2xl">

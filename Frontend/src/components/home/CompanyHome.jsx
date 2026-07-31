@@ -145,7 +145,7 @@ export default function CompanyHome() {
                 key: res.data.keyId,
                 amount: res.data.amount,
                 currency: res.data.currency,
-                name: "Service-Bee Premium",
+                name: "ServiceHive Premium",
                 description: `Upgrade to ${plan} priority status`,
                 order_id: res.data.orderId,
                 handler: async (response) => {

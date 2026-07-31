@@ -62,7 +62,7 @@ export const registerCompany = async (req, res) => {
     // Send OTP via Email
     await sendEmail(
       company.email,
-      "Welcome to Service Bee - Verify Your Business",
+      "Welcome to ServiceHive - Verify Your Business",
       `Your business verification OTP is: ${otp}.`,
       getOtpTemplate(otp, name, "Business Verification")
     );
@@ -103,7 +103,7 @@ export const loginCompany = async (req, res) => {
     // Send OTP via Email
     const result = await sendEmail(
       company.email,
-      "Company Login OTP - Service Bee",
+      "Company Login OTP - ServiceHive",
       `Your login OTP is: ${otp}.`,
       getOtpTemplate(otp, company.name, "Company Access")
     );
@@ -192,7 +192,7 @@ export const resendCompanyOTP = async (req, res) => {
 
     await sendEmail(
       email,
-      "Login OTP - Service Bee",
+      "Login OTP - ServiceHive",
       `Your new OTP is: ${otp}`,
       getOtpTemplate(otp, company.name, "Company OTP Resend")
     );

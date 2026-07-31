@@ -15,7 +15,7 @@ export default function UserPremiumModal({ isOpen, onClose }) {
                 key: res.data.keyId,
                 amount: res.data.amount,
                 currency: res.data.currency,
-                name: "Service-Bee Premium",
+                name: "ServiceHive Premium",
                 description: `Priority ${plan} Access`,
                 order_id: res.data.orderId,
                 handler: async (response) => {

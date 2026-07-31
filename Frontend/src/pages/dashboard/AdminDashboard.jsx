@@ -88,7 +88,7 @@ export default function AdminDashboard() {
                                 Hive <span className="text-petal-rose">Guardian</span>
                             </h1>
                         </div>
-                        <p className="text-gray-500 dark:text-gray-400 font-medium ml-1">Administrative oversight for the Service Bee hive</p>
+                        <p className="text-gray-500 dark:text-gray-400 font-medium ml-1">Administrative oversight for the ServiceHive platform</p>
                     </div>
 
                     <motion.div

@@ -186,7 +186,7 @@ export default function UserHome() {
                 key: payRes.data.keyId,
                 amount: payRes.data.amount,
                 currency: payRes.data.currency,
-                name: "Service-Bee Payment",
+                name: "ServiceHive Payment",
                 description: `Service Fee for ${bookingData.serviceName}`,
                 order_id: payRes.data.orderId,
                 handler: async (response) => {
@@ -236,7 +236,7 @@ export default function UserHome() {
                 key: res.data.keyId,
                 amount: res.data.amount,
                 currency: res.data.currency,
-                name: "Service-Bee Payment",
+                name: "ServiceHive Payment",
                 description: `Service Fee for ${serviceName}`,
                 order_id: res.data.orderId,
                 handler: async (response) => {
@@ -736,7 +736,7 @@ export default function UserHome() {
 
                                 {activeChatRequest?.status === 'completed' && (
                                     <div className="p-6 bg-emerald-500/10 rounded-3xl border border-emerald-500/20 text-center">
-                                        <p className="text-sm font-bold text-emerald-600 italic">"The service is complete. Thank you for using ServiceBee!"</p>
+                                        <p className="text-sm font-bold text-emerald-600 italic">"The service is complete. Thank you for using ServiceHive!"</p>
                                     </div>
                                 )}
 

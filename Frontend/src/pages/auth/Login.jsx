@@ -89,8 +89,8 @@ export default function Login() {
           <Link to="/" className="inline-flex items-center gap-2 mb-6 group bg-petal-rose/10 p-4 rounded-2xl">
             <Sparkles className="w-8 h-8 text-petal-rose transition-transform group-hover:scale-110" />
           </Link>
-          <h2 className="text-4xl font-display font-black text-petal-leaf dark:text-white tracking-tight">Bee Back</h2>
-          <p className="text-gray-500 dark:text-gray-400 mt-2 font-medium">Log into the hive</p>
+          <h2 className="text-4xl font-display font-black text-petal-leaf dark:text-white tracking-tight">Welcome Back</h2>
+          <p className="text-gray-500 dark:text-gray-400 mt-2 font-medium">Log into ServiceHive</p>
         </div>
 
         {/* Role Toggles */}
@@ -177,9 +177,9 @@ export default function Login() {
         )}
 
         <p className="text-center text-gray-500 dark:text-gray-400 text-sm mt-10 font-medium">
-          New to the hive?{" "}
+          New to ServiceHive?{" "}
           <Link to="/signup" className="text-petal-leaf dark:text-petal-rose hover:underline font-bold transition-all">
-            Join the Hive
+            Join ServiceHive
           </Link>
         </p>
       </Card>

@@ -12,7 +12,7 @@ export default function Footer() {
                             <BeeLogo className="w-8 h-8" />
                         </div>
                         <span className="text-3xl font-display font-black tracking-tighter">
-                            <span className="text-petal-moss dark:text-white">Service</span> <span className="text-petal-rose">Bee</span>
+                            <span className="text-petal-moss dark:text-white">Service</span><span className="text-petal-rose">Hive</span>
                         </span>
                     </div>
                 </Link>
@@ -21,7 +21,7 @@ export default function Footer() {
                 </p>
                 <div className="border-t border-gray-100 dark:border-petal-leaf/5 pt-10">
                     <p className="text-gray-400 dark:text-gray-500 text-xs font-bold uppercase tracking-[0.3em]">
-                        © {new Date().getFullYear()} Service-Bee Hub • All Rights Reserved
+                        © {new Date().getFullYear()} ServiceHive Hub • All Rights Reserved
                     </p>
                     <span className="text-[10px] text-petal-rose mt-4 block font-black uppercase tracking-[0.4em] opacity-80 underline underline-offset-8 decoration-petal-rose/30">Premium Service Network</span>
                 </div>
