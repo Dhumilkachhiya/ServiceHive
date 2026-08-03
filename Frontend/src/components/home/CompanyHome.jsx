@@ -363,14 +363,14 @@ export default function CompanyHome() {
                 </div>
 
                 <div className="flex flex-wrap lg:flex-nowrap gap-4 relative z-10 w-full lg:w-auto">
-                    <Button onClick={() => setShowCatalogModal(true)} className="flex-1 lg:flex-none bg-white dark:bg-white/5 text-petal-moss dark:text-white border border-gray-100 dark:border-white/10 shadow-xl hover:bg-gray-50 dark:hover:bg-white/10 h-16 px-8 rounded-[24px] font-black group transition-all">
+                    <Button onClick={() => setShowCatalogModal(true)} className="flex-1 lg:flex-none whitespace-nowrap bg-white dark:bg-white/5 text-petal-moss dark:text-white border border-gray-100 dark:border-white/10 shadow-xl hover:bg-gray-50 dark:hover:bg-white/10 h-16 px-8 rounded-[24px] font-black group transition-all">
                         <Edit3 className="group-hover:rotate-12 transition-transform text-petal-rose mr-2" size={18} /> Manage Catalog
                     </Button>
-                    <Button onClick={() => setShowHolidayModal(true)} className="flex-1 lg:flex-none bg-white dark:bg-white/5 text-petal-moss dark:text-white border border-gray-100 dark:border-white/10 shadow-xl hover:bg-gray-50 dark:hover:bg-white/10 h-16 px-8 rounded-[24px] font-black group transition-all">
+                    <Button onClick={() => setShowHolidayModal(true)} className="flex-1 lg:flex-none whitespace-nowrap bg-white dark:bg-white/5 text-petal-moss dark:text-white border border-gray-100 dark:border-white/10 shadow-xl hover:bg-gray-50 dark:hover:bg-white/10 h-16 px-8 rounded-[24px] font-black group transition-all">
                         <Calendar className="mr-2 text-amber-500" size={18} /> Store Holidays
                     </Button>
                     {!profile?.isPremium && (
-                        <Button onClick={() => setShowPremiumModal(true)} className="w-full lg:w-auto bg-amber-400 text-gray-900 border-none shadow-xl shadow-amber-500/20 h-16 px-8 rounded-[24px] font-black group overflow-hidden relative">
+                        <Button onClick={() => setShowPremiumModal(true)} className="w-full lg:w-auto whitespace-nowrap bg-amber-400 text-gray-900 border-none shadow-xl shadow-amber-500/20 h-16 px-8 rounded-[24px] font-black group overflow-hidden relative">
                             <span className="relative z-10 flex items-center justify-center gap-2">
                                 <Zap size={18} fill="currentColor" className="animate-pulse" /> Go Premium
                             </span>
@@ -545,18 +545,18 @@ export default function CompanyHome() {
                 {showPremiumModal && (
                     <div className="fixed inset-0 z-[120] flex items-center justify-center p-4">
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setShowPremiumModal(false)} />
-                        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} className="w-full max-w-5xl bg-white dark:bg-[#0f1115] rounded-[48px] p-8 md:p-14 shadow-2xl border border-white/10 relative z-10 max-h-[95vh] overflow-y-auto custom-scrollbar">
+                        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} className="w-full max-w-5xl bg-white dark:bg-[#0f1115] rounded-[32px] md:rounded-[40px] p-6 md:p-10 shadow-2xl border border-white/10 relative z-10 max-h-[95vh] overflow-y-auto custom-scrollbar">
                             <button onClick={() => setShowPremiumModal(false)} className="absolute top-8 right-8 p-3 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full transition-colors"><X size={28} /></button>
 
-                            <div className="text-center mb-16">
-                                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-amber-400 w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-amber-400/20">
-                                    <Sparkles className="text-white" size={48} fill="currentColor" />
+                            <div className="text-center mb-6 mt-0">
+                                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-amber-400 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-xl shadow-amber-400/20">
+                                    <Sparkles className="text-white" size={24} fill="currentColor" />
                                 </motion.div>
-                                <h2 className="text-5xl font-black mb-4">Go <span className="text-amber-500">Premium</span></h2>
-                                <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">Unlock advanced features and top visibility in the local network.</p>
+                                <h2 className="text-3xl font-black mb-2">Go <span className="text-amber-500">Premium</span></h2>
+                                <p className="text-gray-500 max-w-2xl mx-auto text-sm leading-relaxed">Unlock advanced features and top visibility in the local network.</p>
                             </div>
 
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                                 <PricingCard title="Monthly Plan" price="₹2,000" period="per month" features={["Priority Listing", "Premium Badge", "24/7 Support"]} onClick={() => handleSubscribe('monthly')} />
                                 <PricingCard title="6-Month Plan" price="₹10,000" period="per 6 months" popular features={["All Monthly Features", "Save ₹2,000", "Analytics"]} onClick={() => handleSubscribe('semi-annual')} />
                                 <PricingCard title="Annual Plan" price="₹20,000" period="per year" features={["All 6-Month Features", "Save ₹4,000", "Official Partner"]} onClick={() => handleSubscribe('yearly')} />
@@ -642,26 +642,26 @@ export default function CompanyHome() {
 }
 
 const PricingCard = ({ title, price, period, features, onClick, popular }) => (
-    <div className={cn("p-10 rounded-[48px] border-2 transition-all duration-500 flex flex-col group relative overflow-hidden",
+    <div className={cn("p-6 rounded-[32px] border-2 transition-all duration-500 flex flex-col group relative",
         popular
             ? "bg-gradient-to-br from-amber-400 to-orange-500 text-gray-900 border-amber-300 shadow-2xl scale-105 z-10"
             : "bg-white dark:bg-[#1a1c21] border-gray-100 dark:border-white/5 text-gray-900 dark:text-white hover:border-amber-400/50 hover:shadow-2xl hover:shadow-amber-500/10")}>
 
         {popular && (
-            <div className="absolute top-0 right-10 -translate-y-1/2 bg-gray-900 text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.2em] shadow-xl">
+            <div className="absolute -top-3 right-6 bg-gray-900 text-white text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em] shadow-xl">
                 Best Value
             </div>
         )}
 
-        <h3 className="text-2xl font-black mb-1 uppercase tracking-tighter">{title}</h3>
-        <p className={cn("text-xs font-bold mb-8 opacity-70 uppercase tracking-[0.2em]", popular ? "text-gray-900" : "text-gray-500 dark:text-gray-400")}>{period}</p>
+        <h3 className="text-lg font-black mb-1 uppercase tracking-tighter">{title}</h3>
+        <p className={cn("text-[9px] font-bold mb-4 opacity-70 uppercase tracking-[0.2em]", popular ? "text-gray-900" : "text-gray-500 dark:text-gray-400")}>{period}</p>
 
-        <div className="flex items-baseline gap-1 mb-10">
-            <span className="text-5xl font-black tracking-tighter">{price}</span>
-            <span className="text-sm font-bold opacity-60">/ plan</span>
+        <div className="flex items-baseline gap-1 mb-6">
+            <span className="text-3xl font-black tracking-tighter">{price}</span>
+            <span className="text-[10px] font-bold opacity-60">/ plan</span>
         </div>
 
-        <div className="space-y-5 mb-12 flex-grow">
+        <div className="space-y-3 mb-6 flex-grow">
             {features.map((f, i) => (
                 <div key={i} className="flex items-center gap-4 text-sm font-bold group/feat">
                     <div className={cn("w-6 h-6 rounded-full flex items-center justify-center transition-transform group-hover/feat:scale-110",
@@ -677,7 +677,7 @@ const PricingCard = ({ title, price, period, features, onClick, popular }) => (
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={onClick}
-            className={cn("w-full h-16 rounded-[24px] font-black uppercase text-xs tracking-[0.2em] border-none shadow-xl transition-all",
+            className={cn("w-full h-12 rounded-[20px] font-black uppercase text-[10px] tracking-[0.2em] border-none shadow-xl transition-all",
                 popular
                     ? "bg-gray-900 text-white hover:bg-black shadow-gray-900/20"
                     : "bg-amber-400 text-gray-900 hover:bg-amber-500 shadow-amber-500/20")}

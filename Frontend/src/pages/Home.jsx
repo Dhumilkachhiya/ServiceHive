@@ -58,7 +58,7 @@ const Hero = () => {
               </Button>
             </Link>
             <Link to="/global-chat">
-              <Button variant="outline" className="px-10 py-5 text-lg rounded-[24px] border-petal-rose/30 text-petal-rose hover:bg-petal-rose/5 transition-all">
+              <Button variant="outline" className="px-10 py-5 text-lg rounded-[24px] border-gray-200 text-gray-800 dark:border-white/20 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all">
                 Explore Hive Chat
               </Button>
             </Link>

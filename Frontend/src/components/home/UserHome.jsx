@@ -414,15 +414,14 @@ export default function UserHome() {
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
                         <div className="lg:col-span-2 space-y-6">
-                            <div className="relative group">
-                                <Search className="absolute left-5 top-1/2 -track-y-1/2 text-gray-400 group-focus-within:text-petal-rose transition-colors" size={20} style={{ transform: 'translateY(-50%)' }} />
+                            <div className="relative group w-full">
+                                <Search className="absolute left-6 top-1/2 text-gray-400 group-focus-within:text-petal-rose transition-colors z-10" size={20} style={{ transform: 'translateY(-50%)' }} />
                                 <Input
                                     placeholder="Search the service you want"
-                                    className="pl-14 pr-14 h-16 rounded-[24px] bg-white dark:bg-petal-muted/20 border-none shadow-lg focus:ring-2 focus:ring-petal-rose transition-all placeholder:text-gray-400 text-gray-800 dark:text-white"
+                                    inputClassName="w-full pl-14 pr-6 h-16 rounded-[24px] bg-white dark:bg-[#1a1c21] border-none shadow-xl focus:ring-2 focus:ring-petal-rose transition-all placeholder:text-gray-400 text-gray-800 dark:text-white"
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                 />
-
                             </div>
                             <p className="text-[10px] text-gray-400 mt-2 ml-4 font-bold italic">(Search for specific providers or niche skills in {selectedCategory})</p>
 
