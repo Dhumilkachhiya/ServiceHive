@@ -202,7 +202,13 @@ export default function CompanyHome() {
 
     const handleUpdateCatalog = async () => {
         try {
-            await api.put("/api/companies/catalog", { catalog: profile.serviceCatalog });
+            let finalCatalog = profile.serviceCatalog || [];
+            if (newService.name && newService.price) {
+                finalCatalog = [...finalCatalog, { ...newService, price: Number(newService.price) }];
+                setProfile(prev => ({ ...prev, serviceCatalog: finalCatalog }));
+                setNewService({ name: "", price: "", description: "" });
+            }
+            await api.put("/api/companies/catalog", { catalog: finalCatalog });
             alert("Service catalog updated successfully!");
             setShowCatalogModal(false);
         } catch (err) {
@@ -217,7 +223,6 @@ export default function CompanyHome() {
             serviceCatalog: [...(prev.serviceCatalog || []), { ...newService, price: Number(newService.price) }]
         }));
         setNewService({ name: "", price: "", description: "" });
-        setShowCatalogModal(false);
     };
 
     const handleRemoveService = (idx) => {

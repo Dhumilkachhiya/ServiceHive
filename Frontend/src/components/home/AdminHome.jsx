@@ -169,7 +169,8 @@ export default function AdminHome() {
                         animate={{ opacity: 1, x: 0 }}
                         className="bg-white dark:bg-petal-muted/20 rounded-[40px] shadow-2xl overflow-hidden border border-gray-100 dark:border-petal-leaf/10"
                     >
-                        <table className="w-full text-left">
+                        <div className="overflow-x-auto w-full custom-scrollbar">
+                            <table className="w-full text-left">
                             <thead className="bg-gray-50 dark:bg-deep-moss border-b border-gray-100 dark:border-petal-leaf/10">
                                 <tr>
                                     <th className="px-8 py-6 text-[10px] font-black uppercase text-gray-500 dark:text-gray-400 tracking-[0.2em]">Name</th>
@@ -198,6 +199,7 @@ export default function AdminHome() {
                                 ))}
                             </tbody>
                         </table>
+                        </div>
                     </motion.div>
                 )}
 
@@ -208,7 +210,8 @@ export default function AdminHome() {
                         animate={{ opacity: 1, x: 0 }}
                         className="bg-white dark:bg-petal-muted/20 rounded-[40px] shadow-2xl overflow-hidden border border-gray-100 dark:border-petal-leaf/10"
                     >
-                        <table className="w-full text-left">
+                        <div className="overflow-x-auto w-full custom-scrollbar">
+                            <table className="w-full text-left">
                             <thead className="bg-gray-50 dark:bg-deep-moss border-b border-gray-100 dark:border-petal-leaf/10">
                                 <tr>
                                     <th className="px-8 py-6 text-[10px] font-black uppercase text-gray-400 tracking-[0.2em]">Business Name</th>
@@ -244,6 +247,7 @@ export default function AdminHome() {
                                 ))}
                             </tbody>
                         </table>
+                        </div>
                     </motion.div>
                 )}
 
@@ -293,7 +297,8 @@ export default function AdminHome() {
                                 <h3 className="font-black text-gray-800 dark:text-white">Recent Transactions</h3>
                                 <DollarSign className="text-petal-rose" size={20} />
                             </div>
-                            <table className="w-full text-left">
+                            <div className="overflow-x-auto w-full custom-scrollbar">
+                                <table className="w-full text-left">
                                 <thead className="bg-gray-50 dark:bg-deep-moss">
                                     <tr>
                                         <th className="px-8 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Service</th>
@@ -305,12 +310,13 @@ export default function AdminHome() {
                                     {(requests || []).filter(r => r.status === 'completed').map(r => (
                                         <tr key={r._id} className="border-b border-gray-50 dark:border-petal-leaf/5">
                                             <td className="px-8 py-4 font-bold text-gray-800 dark:text-white text-sm">{r.serviceName}</td>
-                                            <td className="px-8 py-4 font-black text-indigo-500">₹{r.price || 0}</td>
-                                            <td className="px-8 py-4 font-black text-emerald-500">₹{(r.price * 0.1).toFixed(2)}</td>
+                                            <td className="px-8 py-4 font-black text-indigo-500">₹{r.amount || 0}</td>
+                                            <td className="px-8 py-4 font-black text-emerald-500">₹{(r.amount * 0.1).toFixed(2)}</td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </motion.div>
                 )}
@@ -322,7 +328,8 @@ export default function AdminHome() {
                         animate={{ opacity: 1, x: 0 }}
                         className="bg-white dark:bg-petal-muted/20 rounded-[40px] shadow-2xl overflow-hidden border border-gray-100 dark:border-petal-leaf/10"
                     >
-                        <table className="w-full text-left">
+                        <div className="overflow-x-auto w-full custom-scrollbar">
+                            <table className="w-full text-left">
                             <thead className="bg-gray-50 dark:bg-deep-moss border-b border-gray-100 dark:border-petal-leaf/10">
                                 <tr>
                                     <th className="px-8 py-6 text-[10px] font-black uppercase text-gray-400 tracking-[0.2em]">Service</th>
@@ -338,7 +345,7 @@ export default function AdminHome() {
                                         <td className="px-8 py-6 font-black text-gray-800 dark:text-white">{r.serviceName}</td>
                                         <td className="px-8 py-6 text-gray-500 dark:text-gray-400 font-medium">{r.user?.name}</td>
                                         <td className="px-8 py-6 text-petal-rose font-black text-xs uppercase">{r.company?.name}</td>
-                                        <td className="px-8 py-6 font-bold text-gray-800 dark:text-white">₹{r.price || 0}</td>
+                                        <td className="px-8 py-6 font-bold text-gray-800 dark:text-white">₹{r.amount || 0}</td>
                                         <td className="px-8 py-6">
                                             <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${r.status === 'completed' ? 'bg-emerald-100 text-emerald-700' :
                                                 r.status === 'pending' ? 'bg-amber-100 text-amber-700' : 'bg-blue-100 text-blue-700'
@@ -350,6 +357,7 @@ export default function AdminHome() {
                                 ))}
                             </tbody>
                         </table>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

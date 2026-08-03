@@ -41,6 +41,25 @@
     @apply bg-petal-rose rounded-full;
 }
 
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@layer utilities {
+    .animate-gradient-text {
+        background: linear-gradient(to right, #FF8E9C, #FFC1C8, #FF8E9C);
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: gradient-x 3s ease infinite;
+    }
+}
+
 :root {
     color-scheme: light;
 }

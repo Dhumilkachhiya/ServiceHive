@@ -33,7 +33,7 @@ const Hero = () => {
             className="text-6xl md:text-8xl font-display font-black text-petal-leaf dark:text-white leading-[0.9] tracking-tighter mb-8"
           >
             Your Curated <br />
-            <span className="text-petal-rose italic pr-2"><span className="text-petal-moss dark:text-white not-italic">Service</span> Bee</span>
+            <span className="text-petal-rose italic pr-2"><span className="text-petal-moss dark:text-white not-italic">Service</span> <span className="animate-gradient-text bg-clip-text text-transparent bg-gradient-to-r from-petal-rose via-[#FFC1C8] to-petal-rose">Hive</span></span>
           </motion.h1>
 
           <motion.p
@@ -69,14 +69,21 @@ const Hero = () => {
   );
 };
 
-const FeatureCard = ({ icon: Icon, title, desc }) => (
-  <Card className="p-8 border-none bg-white dark:bg-petal-muted/20 shadow-xl rounded-[40px] hover:shadow-2xl transition-all group">
-    <div className="bg-petal-rose/10 w-16 h-16 rounded-3xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
-      <Icon className="text-petal-rose w-8 h-8" />
-    </div>
-    <h3 className="text-2xl font-black text-petal-leaf dark:text-white mb-3 tracking-tight">{title}</h3>
-    <p className="text-gray-500 dark:text-gray-400 font-medium leading-relaxed">{desc}</p>
-  </Card>
+const FeatureCard = ({ icon: Icon, title, desc, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-50px" }}
+    transition={{ duration: 0.5, delay }}
+  >
+    <Card className="p-8 border-none bg-white dark:bg-petal-muted/20 shadow-xl rounded-[40px] hover:shadow-2xl transition-all group h-full">
+      <div className="bg-petal-rose/10 w-16 h-16 rounded-3xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
+        <Icon className="text-petal-rose w-8 h-8" />
+      </div>
+      <h3 className="text-2xl font-black text-petal-leaf dark:text-white mb-3 tracking-tight">{title}</h3>
+      <p className="text-gray-500 dark:text-gray-400 font-medium leading-relaxed">{desc}</p>
+    </Card>
+  </motion.div>
 );
 
 const Home = () => {
@@ -98,16 +105,19 @@ const Home = () => {
             icon={Shield}
             title="Vetted Providers"
             desc="Only verified providers enter our hive. We ensure quality through strict standards."
+            delay={0.1}
           />
           <FeatureCard
             icon={Activity}
             title="Real-time Wisdom"
             desc="AI-powered insights to help you find the perfect service for your specific needs."
+            delay={0.2}
           />
           <FeatureCard
             icon={Briefcase}
             title="Secure Exchange"
             desc="Safe as a hive. Your service requests are handled with maximum security and care."
+            delay={0.3}
           />
         </div>
       </section>
@@ -121,8 +131,8 @@ const Home = () => {
               Join thousands of happy souls who have improved their lives with ServiceHive.
             </p>
             <Link to="/signup">
-              <Button className="bg-petal-rose text-white hover:opacity-90 px-12 py-5 text-xl font-black rounded-[24px] flex items-center gap-3 mx-auto shadow-2xl shadow-petal-rose/30 border-none">
-                Get Started Now <ArrowRight size={24} />
+              <Button className="bg-petal-rose text-white hover:opacity-90 px-12 py-5 text-xl font-black rounded-[24px] flex items-center gap-3 mx-auto shadow-2xl shadow-petal-rose/30 border-none group">
+                Get Started Now <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>

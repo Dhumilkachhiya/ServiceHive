@@ -18,7 +18,7 @@ router.get("/stats", protectAdmin, async (req, res) => {
 
     // Profit Calculation Logic: Sum of all request prices * platform fee (e.g. 10%)
     const requests = await Request.find({ status: "completed" });
-    const totalRequestRevenue = requests.reduce((sum, req) => sum + (req.price || 0), 0);
+    const totalRequestRevenue = requests.reduce((sum, req) => sum + (req.amount || 0), 0);
     const platformCommission = totalRequestRevenue * 0.10; // 10% commission
 
     // Subscription Revenue (100% Admin Profit)

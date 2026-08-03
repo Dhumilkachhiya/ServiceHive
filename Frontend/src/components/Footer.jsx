@@ -16,9 +16,14 @@ export default function Footer() {
                         </span>
                     </div>
                 </Link>
-                <p className="max-w-md mx-auto text-gray-500 dark:text-gray-400 font-medium leading-relaxed mb-10 translate-y-[-10px]">
+                <p className="max-w-md mx-auto text-gray-500 dark:text-gray-400 font-medium leading-relaxed mb-8">
                     Empowering local professionals to build the most efficient hive for premium services in every community.
                 </p>
+                <div className="flex items-center justify-center gap-6 mb-10">
+                    <a href="#" className="text-gray-400 hover:text-petal-rose transition-colors text-sm font-bold">Twitter</a>
+                    <a href="#" className="text-gray-400 hover:text-petal-rose transition-colors text-sm font-bold">Instagram</a>
+                    <a href="#" className="text-gray-400 hover:text-petal-rose transition-colors text-sm font-bold">Support</a>
+                </div>
                 <div className="border-t border-gray-100 dark:border-petal-leaf/5 pt-10">
                     <p className="text-gray-400 dark:text-gray-500 text-xs font-bold uppercase tracking-[0.3em]">
                         © {new Date().getFullYear()} ServiceHive Hub • All Rights Reserved

@@ -75,18 +75,18 @@ export default function VerifyOTP() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-bee-light dark:bg-bee-dark px-4 py-20 relative overflow-hidden">
-            <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-bee-yellow/10 rounded-full blur-[120px]" />
-            <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px]" />
+        <div className="min-h-screen flex items-center justify-center bg-petal-light dark:bg-deep-moss px-4 py-20 relative overflow-hidden">
+            <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-petal-rose/10 rounded-full blur-[120px]" />
+            <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-petal-leaf/5 rounded-full blur-[120px]" />
 
-            <Card className="w-full max-w-md z-10 border-none shadow-2xl bg-white dark:bg-bee-muted p-10 rounded-[40px]">
+            <Card className="w-full max-w-md z-10 border-none shadow-2xl bg-white dark:bg-petal-muted/20 p-10 rounded-[40px]">
                 <div className="text-center mb-10">
-                    <div className="mx-auto w-20 h-20 bg-bee-yellow/10 rounded-[28px] flex items-center justify-center mb-8 border border-bee-yellow/20">
-                        <ShieldCheck className="text-bee-yellow w-10 h-10" />
+                    <div className="mx-auto w-20 h-20 bg-petal-rose/10 rounded-[28px] flex items-center justify-center mb-8 border border-petal-rose/20">
+                        <ShieldCheck className="text-petal-rose w-10 h-10" />
                     </div>
-                    <h2 className="text-3xl font-display font-black text-bee-accent dark:text-white mb-2 tracking-tight">Verify Identity</h2>
+                    <h2 className="text-3xl font-display font-black text-petal-leaf dark:text-white mb-2 tracking-tight">Verify Identity</h2>
                     <p className="text-gray-500 dark:text-gray-400 font-medium text-sm px-4">
-                        We've sent a 6-digit code to <br /><span className="text-bee-accent dark:text-white font-bold">{email}</span>
+                        We've sent a 6-digit code to <br /><span className="text-petal-moss dark:text-white font-bold">{email}</span>
                     </p>
                 </div>
 
@@ -126,7 +126,7 @@ export default function VerifyOTP() {
 
                     <Button
                         type="submit"
-                        className="w-full bg-bee-accent dark:bg-bee-yellow text-white dark:text-bee-accent py-5 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-xl shadow-bee-yellow/10 text-lg group"
+                        className="w-full bg-petal-leaf dark:bg-petal-rose text-white dark:text-deep-moss py-5 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-xl shadow-petal-rose/10 text-lg group"
                         disabled={loading || otp.length !== 6}
                     >
                         {loading ? "Verifying..." : (
@@ -144,14 +144,14 @@ export default function VerifyOTP() {
                     <button
                         onClick={handleResend}
                         disabled={resendLoading}
-                        className="inline-flex items-center gap-2 text-bee-accent dark:text-bee-yellow font-bold hover:underline transition-all disabled:opacity-50"
+                        className="inline-flex items-center gap-2 text-petal-moss dark:text-petal-rose font-bold hover:underline transition-all disabled:opacity-50"
                     >
                         <RefreshCw size={16} className={resendLoading ? "animate-spin" : ""} />
                         {resendLoading ? "Sending..." : "Resend OTP"}
                     </button>
 
                     <div className="pt-4">
-                        <Link to="/signup" className="text-gray-400 hover:text-bee-accent dark:hover:text-white text-xs font-bold uppercase tracking-widest transition-colors">
+                        <Link to="/signup" className="text-gray-400 hover:text-petal-moss dark:hover:text-white text-xs font-bold uppercase tracking-widest transition-colors">
                             Back to Signup
                         </Link>
                     </div>

@@ -12,7 +12,7 @@ export default function Layout() {
     <div className="min-h-screen flex flex-col bg-petal-light dark:bg-premium-dark text-petal-moss dark:text-gray-100 font-sans selection:bg-petal-rose selection:text-white">
       <ChatDisclaimer />
       <Navbar onOpenPremium={() => setIsPremiumModalOpen(true)} />
-      <main className="flex-grow container mx-auto px-4 py-16 max-w-7xl relative z-0">
+      <main className="flex-grow container mx-auto px-4 py-16 max-w-7xl">
         <Outlet />
       </main>
       <Footer />

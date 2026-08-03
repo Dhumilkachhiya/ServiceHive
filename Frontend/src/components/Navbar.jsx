@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Button from "./ui/Button";
 import { motion } from "framer-motion";
 import { Menu, X, Sun, Moon, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BeeLogo from "./ui/BeeLogo";
 import { cn } from "../lib/utils";
 import UserPremiumModal from "./UserPremiumModal";
@@ -11,9 +11,14 @@ import UserPremiumModal from "./UserPremiumModal";
 export default function Navbar({ onOpenPremium }) {
     const { user, logout } = useAuth();
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [location.pathname]);
 
     return (
-        <nav className="bg-white/80 dark:bg-deep-moss/80 backdrop-blur-xl border-b border-gray-100 dark:border-petal-leaf/20 sticky top-0 z-[50]">
+        <nav className="bg-white/80 dark:bg-deep-moss/80 backdrop-blur-xl border-b border-gray-100 dark:border-petal-leaf/20 sticky top-0 z-[50] shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <Link to="/" className="flex items-center gap-2 group">
@@ -118,6 +123,14 @@ export default function Navbar({ onOpenPremium }) {
                                             <p className="text-xs font-black uppercase tracking-widest text-petal-rose mb-1">
                                                 {user.role === 'company' ? 'Provider' : 'Member'}
                                             </p>
+                                        )}
+                                        {user.role === 'user' && !user.isPremium && (
+                                            <button
+                                                onClick={() => { onOpenPremium(); setIsOpen(false); }}
+                                                className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-500 hover:text-amber-600 transition-colors mb-4 border border-amber-500/30 px-3 py-1.5 rounded-full inline-block"
+                                            >
+                                                Go Premium
+                                            </button>
                                         )}
                                         <p className={`font-bold text-gray-800 dark:text-white mb-6 ${user.role === 'admin' ? 'uppercase tracking-tighter' : ''}`}>
                                             {user.name || (user.email && user.email.split('@')[0]) || 'Bee'}

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/ui/Button";
 import Input from "../../components/ui/Input";
 import Card from "../../components/ui/Card";
-import { Sparkles, Building2, User, ArrowRight } from "lucide-react";
+import { Sparkles, Building2, User, ArrowRight, Loader2 } from "lucide-react";
 import api from "../../utils/api";
 import { motion } from "framer-motion";
 import { useAuth } from "../../context/AuthContext";
@@ -99,13 +99,13 @@ export default function Signup() {
         {/* Role Toggles */}
         <div className="flex p-1.5 bg-gray-100 dark:bg-petal-muted/30 rounded-2xl mb-10 max-w-md mx-auto">
           <button
-            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all ${role === 'user' ? 'bg-white dark:bg-deep-moss text-petal-leaf dark:text-petal-rose shadow-md' : 'text-gray-500 hover:text-petal-leaf dark:hover:text-white'}`}
+            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all ${role === 'user' ? 'bg-white dark:bg-deep-moss text-petal-leaf dark:text-petal-rose shadow-[0_4px_20px_-4px_rgba(255,142,156,0.3)] border border-petal-rose/20' : 'text-gray-500 hover:text-petal-leaf dark:hover:text-white border border-transparent'}`}
             onClick={() => setRole('user')}
           >
             <User size={18} /> User
           </button>
           <button
-            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all ${role === 'company' ? 'bg-white dark:bg-deep-moss text-petal-leaf dark:text-petal-rose shadow-md' : 'text-gray-500 hover:text-petal-leaf dark:hover:text-white'}`}
+            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all ${role === 'company' ? 'bg-white dark:bg-deep-moss text-petal-leaf dark:text-petal-rose shadow-[0_4px_20px_-4px_rgba(255,142,156,0.3)] border border-petal-rose/20' : 'text-gray-500 hover:text-petal-leaf dark:hover:text-white border border-transparent'}`}
             onClick={() => setRole('company')}
           >
             <Building2 size={18} /> Company
@@ -115,8 +115,9 @@ export default function Signup() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ x: -10 }}
+              animate={{ x: [0, -10, 10, -10, 10, 0] }}
+              transition={{ duration: 0.4 }}
               className="bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-900/30 text-red-600 dark:text-red-400 p-4 rounded-2xl text-xs font-bold text-center"
             >
               {error}
@@ -138,7 +139,7 @@ export default function Signup() {
                   value={formData.serviceCategory}
                   onChange={handleChange}
                   required
-                  className="px-4 py-3 rounded-xl bg-gray-50 dark:bg-petal-muted/30 border border-gray-100 dark:border-petal-leaf/10 text-petal-leaf dark:text-white focus:outline-none focus:border-petal-rose focus:ring-1 focus:ring-petal-rose transition-all placeholder-gray-400 text-sm h-[52px]"
+                  className="px-4 py-3 rounded-2xl bg-gray-50 dark:bg-petal-muted/30 border border-gray-100 dark:border-petal-leaf/10 text-petal-moss dark:text-white focus:outline-none focus:border-petal-rose focus:ring-2 focus:ring-petal-rose/20 transition-all placeholder-gray-400 text-sm h-[52px]"
                 >
                   <option value="">-- Select Category --</option>
                   <option value="Cleaning">Cleaning</option>
@@ -165,7 +166,7 @@ export default function Signup() {
               <label className="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-wider ml-1 px-1">Service Specialization & Field</label>
               <textarea
                 name="description"
-                className="px-4 py-3 rounded-xl bg-gray-50 dark:bg-petal-muted/30 border border-gray-100 dark:border-petal-leaf/10 text-petal-leaf dark:text-white focus:outline-none focus:border-petal-rose focus:ring-1 focus:ring-petal-rose transition-all placeholder-gray-400 text-sm min-h-[100px]"
+                className="px-4 py-3 rounded-2xl bg-gray-50 dark:bg-petal-muted/30 border border-gray-100 dark:border-petal-leaf/10 text-petal-moss dark:text-white focus:outline-none focus:border-petal-rose focus:ring-2 focus:ring-petal-rose/20 transition-all placeholder-gray-400 text-sm min-h-[100px]"
                 placeholder="Describe your specific field of expertise and the types of services you provide..."
                 value={formData.description}
                 onChange={handleChange}
@@ -173,10 +174,14 @@ export default function Signup() {
             </div>
           )}
 
-          <Button type="submit" className="w-full mt-8 bg-petal-leaf dark:bg-petal-rose text-white dark:text-deep-moss py-4 rounded-2xl font-bold flex items-center justify-center gap-2 shadow-xl shadow-petal-rose/10 border-none" disabled={loading}>
-            {loading ? "Registering..." : (
+          <Button type="submit" className="w-full mt-8 bg-petal-leaf dark:bg-petal-rose text-white dark:text-deep-moss py-4 rounded-2xl font-bold flex items-center justify-center gap-2 shadow-xl shadow-petal-rose/10 border-none group transition-all" disabled={loading}>
+            {loading ? (
               <>
-                Register Now <ArrowRight size={20} />
+                <Loader2 size={20} className="animate-spin" /> Registering...
+              </>
+            ) : (
+              <>
+                Register Now <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </>
             )}
           </Button>
